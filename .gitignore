@@ -9,3 +9,6 @@ NOTES.md
 
 # Yarn
 yarn-error.log
+
+# Environment
+.env

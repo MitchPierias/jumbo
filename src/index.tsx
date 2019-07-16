@@ -6,6 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 // import Header from './components/Header';
 // import AuthProvider from './context/AuthService';
 // import { APIService } from './context/APIService';
+import { Test } from './App';
 // Global Styles
 import './index.css';
 
@@ -16,9 +17,7 @@ import './index.css';
  */
 const App = (
     <Router>
-        <div>
-            <h1>Test</h1>
-        </div>
+        <Test/>
     </Router>
 )
 
