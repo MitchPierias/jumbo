@@ -22,7 +22,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 	meta: {
 		"viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
 		"link": {
-            "href":"https://fonts.googleapis.com/css?family=Lato",
+            "href":"https://fonts.googleapis.com/css?family=Roboto",
             "rel":"stylesheet"
         }
 	},
@@ -85,7 +85,7 @@ module.exports = {
 	devServer: {
 		publicPath:"http://localhost:8000",
 		contentBase: rootPath("assets"),
-		open: false,
+		open: true,
 		lazy: false,
 		compress: true,
 		historyApiFallback: true,
