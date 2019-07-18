@@ -1,5 +1,22 @@
+# Node files
 node_modules
 
+# Notes
 NOTES.md
 
+# Apple files
 .DS_Store
+
+# Yarn
+yarn-error.log
+
+# Environment
+.env
+
+# Builds
+dist
+lib
+build
+
+# Testing
+coverage
