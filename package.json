@@ -6,22 +6,32 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --progress",
     "build": "webpack",
-    "test": "mocha -r ts-node/register ./src/**/*.test.ts"
+    "test:ui": "jest",
+    "test:models": "mocha -r ts-node/register ./src/**/*.test.ts",
+    "test": "yarn run test:models && yarn run test:ui"
   },
   "author": "Mitch Pierias <github.com/MitchPierias>",
   "license": "ISC",
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1"
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "redux": "^4.0.4"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^24.0.15",
+    "@types/jest-matchers": "^20.0.2",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.6.3",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
+    "@types/react-redux": "^7.1.1",
     "@types/react-router-dom": "^4.3.4",
+    "@types/react-test-renderer": "^16.8.2",
     "awesome-typescript-loader": "^5.2.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
@@ -32,16 +42,42 @@
     "chai": "^4.2.0",
     "css-loader": "^3.0.0",
     "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "es6-promise": "^4.2.8",
     "html-webpack-plugin": "^3.2.0",
     "isomorphic-fetch": "^2.2.1",
+    "jest": "^24.8.0",
+    "jest-environment-enzyme": "^7.0.2",
+    "jest-enzyme": "^7.0.2",
     "mocha": "^6.1.4",
     "path": "^0.12.7",
+    "react-test-renderer": "^16.8.6",
     "style-loader": "^0.23.1",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/setup/jest-polyfill.js",
+      "<rootDir>/setup/enzyme-setup.js"
+    ],
+    "setupFilesAfterEnv": ["jest-enzyme"],
+    "testEnvironment": "enzyme",
+    "moduleFileExtensions": [
+      "js",
+      "tsx"
+    ],
+    "transform": {
+      "^.+\\.(tsx)$": "<rootDir>/setup/test-preprocessor.js"
+    },
+    "testMatch": [
+      "**/*.test.tsx"
+    ],
+    "testEnvironmentOptions": {
+      "enzymeAdapter": "react16"
+    }
   }
 }
