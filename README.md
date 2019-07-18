@@ -16,6 +16,8 @@ yarn run start
 
 ## Testing
 
+Some examples of testing have been implemented and can be run using;
+
 ```bash
 yarn run test
 ```
@@ -32,11 +34,10 @@ yarn run test
 ## Notes
 
 #### Infinite Scrolling
-Implemented an infinite scroll view for the main movie list to fetch new movies when the user reaches the end of the page. Experience could be improved by triggering a query at a certain scroll percentage and performance further optimized by only rendering chunks, throwing away 'out of visible range' items.
+Implemented an infinite scroll view for the main movie list to fetch new movies when the user reaches the end of the page. The experience could be improved by triggering a query at a certain scroll percentage, rather than page end. Performance could be further optimized by only rendering chunks, and 'unmounting' away 'out of visible range' items.
 
 #### Caching
-Chose React hooks "useReducer" over Redux
-Implemented simple page history cache to prevent repeat API calls for the infinite scroll movie list.
+Implemented simple page history cache to prevent repeat API calls for the infinite scroll movie list. Chose React hooks `useReducer` over Redux to manage the store, only because it was simpler easier to integrate in a hook based component. `useReducer` shares mostly the same concepts as Redux, so it was simple to skip the `createStore()` process and use the Redux actions and resolvers directly with `useReducer`.
 
 #### Search Optimization
 Added delayed search to limit the number of requests as a user types their query.
