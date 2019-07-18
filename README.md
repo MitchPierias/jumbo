@@ -46,7 +46,12 @@ Added delayed search to limit the number of requests as a user types their query
 I chose to use a root level CSS file due to implementation troubles with CSS-Modules, WebPack and time constraints of the project. This implementation worked in this case as the two-view-application shared allot of styles and had minimal CSS overall. Future functionality however would surface maintenance and scalability problems and classnames begin to clash and file size grows excessive. The next steps would be to migrate towards SASS and seperation of files into their namespaces. Alternatively, I would have liked to use CSS-modules or JSS.
 
 #### Testing
-Testing has been configured using Mocha with Chai for API service testing and Jest with Enzyme snapshots, the majority of tests however haven't been written.
+Testing has been configured using Mocha with Chai for API service unit testing and Jest with Enzyme snapshots, the majority of tests however haven't been written.
+
+> Removed Mocha support at the last minute due to clashing type definitions between Mocha and Jest. Moved API unit testing to Jest.
 
 #### Documentation
 Code documentation and commenting has been written with TypeDocs in mind, a documentation generator which leverages TypeScript, this is why it doesn't follow the common JSDocs format.
+
+#### Why inline styles?
+Simply ran out of time to migrate them over to a style sheet with class names. Occasionally I will write styles inline, in the case when a style value should not ever be changeable, but this was not the case here...
