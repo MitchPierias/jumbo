@@ -1,6 +1,9 @@
 const tsc = require('typescript');
 const tsConfig = require('./../tsconfig.json');
 
+/**
+ * TypeScript to Javascript transpiler
+ */
 module.exports = {
     process(src, path) {
         if (path.endsWith('.ts') || path.endsWith('.tsx') || path.endsWith('.js')) {
