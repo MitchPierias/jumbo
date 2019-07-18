@@ -2,7 +2,7 @@ import {
     ADD_MOVIE
 } from "./movieTypes";
 
-import { TMDBMovie } from "../../context/MovieService";
+import { TMDBMovie } from "../../services/MovieService";
 
 export const addMovie = (newMovie:TMDBMovie) => {
     return {

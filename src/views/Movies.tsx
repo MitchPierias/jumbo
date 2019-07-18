@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 // Context
-import { TMDBMovie } from "./../context/MovieService";
+import { TMDBMovie } from "../services/MovieService";
 // Components
 import { MovieCard } from "./../components/Movie";
 

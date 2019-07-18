@@ -1,5 +1,5 @@
 import { MovieActionTypes, ADD_MOVIE, ADD_MOVIES } from "./movieTypes";
-import { TMDBMovie } from "../../context/MovieService";
+import { TMDBMovie } from "../../services/MovieService";
 
 export type MoviesState = TMDBMovie[];
 

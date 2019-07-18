@@ -1,5 +1,4 @@
-import { TMDBMovie } from "../../context/MovieService";
-
+import { TMDBMovie } from "../../services/MovieService";
 /** Add movie action type */
 export const ADD_MOVIE = "ADD_MOVIE";
 /** Add movies action type */
