@@ -20,11 +20,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 	template: rootPath("assets", "index.html"),
 	filename: "index.html",
 	meta: {
-		"viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
-		"link": {
-            "href":"https://fonts.googleapis.com/css?family=Roboto",
-            "rel":"stylesheet"
-        }
+		"viewport": "width=device-width, initial-scale=1, shrink-to-fit=no"
 	},
 	minify: {
 		collapseWhitespace: true,
