@@ -52,6 +52,8 @@ export const Test:React.FC<{}> = () => {
      */
     const [ results, setResults ] = useState<TMDBMovie[]>();
 
+    const [ selectedMovie, setSelectedMovie ] = useState<TMDBMovie>(); 
+
     /**
      * Triggered on every page change to determine if
      * the movie store requires additional data, then
@@ -91,7 +93,8 @@ export const Test:React.FC<{}> = () => {
      * size remain consistent.
      * @author Mitch Pierias <github.com/MitchPierias>
      */
-    listen(window, 'scroll').start(() => {
+    listen(window, 'scroll').start((event:React.UIEvent<Window>) => {
+        if (selectedMovie) event.preventDefault();
         // Capture scroll position and scroll bounds
         const endScrollPosition = document.body.scrollHeight;
         const scrollPosition = window.scrollY + document.body.clientHeight;
@@ -102,30 +105,13 @@ export const Test:React.FC<{}> = () => {
 
     return (
         <div style={{width:"100vw",maxWidth:"1000px"}}>
-            {/* <Header didChangeSearchField={didChangeSearchField}/>
+            {selectedMovie && <MovieDetail
+                onCancel={() => setSelectedMovie(undefined)}
+                movie={selectedMovie}
+            />}
+            <Header didChangeSearchField={didChangeSearchField}/>
             <div className="heading" style={{padding:"0px 17px"}}>Popular Movies</div>
-            <Movies movies={results||movies||[]}/> */}
-            <MovieDetail
-                onCancel={(event) => {
-                    console.log("Clicked back")
-                }}
-                movie={{
-                    title:"Spider Man",
-                    poster_path:"/rjbNpRMoVvqHmhmksbokcyCr7wn.jpg",
-                    id:429617,
-                    video:false,
-                    vote_count:1785,
-                    vote_average:4.44,
-                    popularity:461.454,
-                    original_language:"en",
-                    original_title:"Spider-Man: Far from Home",
-                    genre_ids:[28,12,878],
-                    backdrop_path:"/dihW2yTsvQlust7mSuAqJDtqW7k.jpg",
-                    adult:false,
-                    overview:"Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to agree to help Nick Fury uncover the mystery of creatures that cause natural disasters and destruction throughout the continent.",
-                    release_date:"2019-06-28",
-                }}
-            />
+            <Movies movies={results||movies||[]} onSelectMovie={(id) => setSelectedMovie(movies[id])}/>
         </div>
     )
 }
