@@ -13,6 +13,7 @@
   "author": "Mitch Pierias <github.com/MitchPierias>",
   "license": "ISC",
   "dependencies": {
+    "popmotion": "^8.7.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
@@ -64,7 +65,9 @@
       "<rootDir>/setup/jest-polyfill.js",
       "<rootDir>/setup/enzyme-setup.js"
     ],
-    "setupFilesAfterEnv": ["jest-enzyme"],
+    "setupFilesAfterEnv": [
+      "jest-enzyme"
+    ],
     "testEnvironment": "enzyme",
     "moduleFileExtensions": [
       "js",
