@@ -42,7 +42,7 @@ module.exports = {
 	target: "web",
 	output: {
 		path: rootPath("dist"),
-		publicPath: "/",
+		publicPath: "./",
 		filename: "[name]-bundle.js"
 	},
 	module: {
