@@ -12,3 +12,11 @@ yarn-error.log
 
 # Environment
 .env
+
+# Builds
+dist
+lib
+build
+
+# Testing
+coverage
