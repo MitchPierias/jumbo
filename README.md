@@ -53,5 +53,11 @@ Testing has been configured using Mocha with Chai for API service unit testing a
 #### Documentation
 Code documentation and commenting has been written with TypeDocs in mind, a documentation generator which leverages TypeScript, this is why it doesn't follow the common JSDocs format.
 
+#### Security
+Ideally a backend service would communicate with the API and communicate with the front-end via some cross-origin restrictions. Furthermore, accidentally included `API_KEY` inline during development, and accidentally locked it within a commit.
+
 #### Why inline styles?
 Simply ran out of time to migrate them over to a style sheet with class names. Occasionally I will write styles inline, in the case when a style value should not ever be changeable, but this was not the case here...
+
+#### Hosting
+The distribution build is deployed to Amazon S3, propegated to Amazon CloudFront and exposed through a subdomain using Route53 with SSL.
